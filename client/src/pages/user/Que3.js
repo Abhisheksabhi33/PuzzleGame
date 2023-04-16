@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Que3() {
   const navigate = useNavigate();
@@ -41,14 +42,42 @@ export default function Que3() {
     <div className="container mt-3">
       <Card style={{ width: "30rem" }}>
         <Card.Body>
-          <Card.Title>Problem-3</Card.Title>
+          <Card.Title>Puzzle-3</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Statement</Card.Subtitle>
           <Card.Text>
-            what is the color of the sky while it is raining? 
-            hint -- sky is blue  
+           
+
+            <div className="fs-2">
+              <i>
+                 The main execution point of a computer program  has a message , find it!!
+              </i>
+            </div>
+             
+             <div className="d-flex flex-col mt-3">
+             <div className="mx-5">
+              <Link  to = "https://res.cloudinary.com/dsxyzdqvo/image/upload/v1681652829/Dual_Ball-1s-200px_sfczxh.gif" target="_blank" style={{textDecoration: "none"}}  className="mt-3"><i>Hidden</i></Link>
+            </div>
+
+            <div>
+              <Link to = "https://drive.google.com/file/d/1kZDN8snWPAZa3eI7cbx3uVfm6lOeFImv/view?usp=sharing" target="_blank" style={{textDecoration: "none"}}  className="mt-3"><i>Hidden</i></Link>
+            </div>
+             </div>
           </Card.Text>
         </Card.Body>
       </Card>
+
+      
+
+      <div>
+        <h3 className="mt-3">Hint</h3>
+        <p className="fs-4">
+          <i>Take Some Danger Task </i>
+        </p>
+        <p className="fs-4">
+          <i> Open in NotePad </i>
+        </p>
+      </div>
+     
 
       <form onSubmit={handleSubmit}>
         <div className="form-group mt-2">

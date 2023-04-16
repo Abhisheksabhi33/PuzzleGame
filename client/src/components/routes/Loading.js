@@ -22,6 +22,6 @@ export default function Loading( {path = "login"} ) {
     }, [count]);
 
     return <div className="d-flex justify-content-center align-items-center" style={{height: "90vh"}} >
-        <img src={LoadingGIF} alt="Loading" style={{width: "450px"}}/>    
+        <img src={LoadingGIF} alt="Loading" style={{width: "100px"}}/>    
     </div>
 }

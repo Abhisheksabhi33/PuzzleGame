@@ -1,8 +1,13 @@
   import React, { useEffect, useState } from 'react';
 import UserTable from './UserTable';
 import axios from 'axios';
+import { useAuth } from '../../context/auth';
+import PageNotFoundGIF from "../../images/pnf.jpg";
+
 
  export default function Leaderboard() {
+    const [auth, setAuth] = useAuth();
+
   const [users, setUsers] = useState([]);
 
    const getUsers = async () => {
@@ -25,7 +30,24 @@ import axios from 'axios';
     useEffect(() => {
     getUsers();
   }, []);
-   
-  return <UserTable users={users} />;
+
+
+  // render UserTable component if user is admin else redirect to page not found
+
+  return auth?.user?.role === 1 ? (
+    <div className="container">
+      <div className="py-4">
+        <h1>Leaderboard</h1>
+        <UserTable users={users} />
+      </div>
+    </div>
+  ) : (
+    <div className="d-flex justify-content-center align-items-center" style={{height: "90vh"}}>
+      <img src={PageNotFoundGIF} alt="PageNotFound" style={{height: "100%", width:"80%"}}/>
+    </div>
+  );
 }
+
+  
+ 
 

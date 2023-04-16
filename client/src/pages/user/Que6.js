@@ -1,8 +1,8 @@
 import Card from "react-bootstrap/Card";
-import { useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Que6() {
   const navigate = useNavigate();
@@ -38,13 +38,25 @@ export default function Que6() {
 
   return (
     <div className="container mt-3">
-      <Card style={{ width: "30rem" }}>
+      <Card style={{ width: "44rem" }}>
         <Card.Body>
-          <Card.Title>Problem-6</Card.Title>
+          <Card.Title>Puzzle-6</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Statement</Card.Subtitle>
           <Card.Text>
-           what will be the condition in the if statement if the variable x is equal to 5?
-              hint -- x = 5
+           
+            <div className="fs-3">
+              <i>
+              We have encrypted the flag using a very simple and easy algorithm........Capture the flag and advance further.
+              </i>
+            </div>
+
+            <div>
+              <div>
+              <Link style={{textDecoration: "none"}} to = "https://res.cloudinary.com/dsxyzdqvo/image/upload/v1681657089/download_nb1ndh.png" target = "_blank">ϱɒl⅃</Link>
+              <Link className="mx-3" style={{textDecoration: "none"}} to = "https://res.cloudinary.com/dsxyzdqvo/image/upload/v1681657907/panda_iqegvb.webp" target = "_blank">MirrorɿoɿɿiM</Link>
+              </div>
+            </div>
+
 
           </Card.Text>
         </Card.Body>

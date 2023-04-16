@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Que2() {
   const navigate = useNavigate();
@@ -39,16 +40,40 @@ export default function Que2() {
 
   return (
     <div className="container mt-3">
-      <Card style={{ width: "30rem" }}>
+      <Card style={{ width: "38rem" }}>
         <Card.Body>
-          <Card.Title>Problem-2</Card.Title>
+          <Card.Title>Puzzle-2</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Statement</Card.Subtitle>
           <Card.Text>
-            Given a string, find the length of the longest substring without
-            repeating characters.
+            <div className="fs-2">
+              <i>
+                莫尔斯 once decided to create a disturbing sound to a hidden
+                message but he can't recover it, help him to extract the hidden
+                message.
+              </i>
+            </div>
+            <div className="fs-2">
+              <i> .-.. .- -... .-.. .- -... .-.. .- -... .-.. .- -... .-.. .- -...</i>
+            </div>
+
+            <div className="fs-2">
+              <i> .-.. .- -... .-.. .- -... .-.. .- -... .-.. .- -... .-.. .- -...</i>
+            </div>
+            <div>
+              <Link to = "https://res.cloudinary.com/dsxyzdqvo/video/upload/v1681650900/beep_beep_ek2ldi.wav" target="_blank" style={{textDecoration: "none"}}  className="mt-3"><i>Hidden</i></Link>
+            </div>
+
           </Card.Text>
         </Card.Body>
       </Card>
+
+      <div>
+        <h3 className="mt-3">Hint</h3>
+        <p className="fs-4">
+          <i>Morse</i>
+        </p>
+      </div>
+
 
       <form onSubmit={handleSubmit}>
         <div className="form-group mt-2">

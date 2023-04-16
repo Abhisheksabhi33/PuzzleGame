@@ -11,7 +11,7 @@ export const que1 = async (req, res) => {
 
         user.end_time=Date.now();
 
-       if(answer==="raja1"){
+       if(answer==="KeeP_c0ding"){
             if(user.que1===false){
                 user.score=user.score+1;
                 user.que1=true;
@@ -44,7 +44,7 @@ export const que2 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="raja2"){
+       if(answer==="m0rsecodeisamazing"){
             if(user.que2===false){
                 user.score=user.score+1;
                 user.que2=true;
@@ -76,7 +76,7 @@ export const que3 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="raja3"){
+       if(answer==="keep_coding"){
             if(user.que3===false){
                 user.score=user.score+1;
                 user.que3=true;
@@ -107,7 +107,7 @@ export const que4 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="raja4"){
+       if(answer==="the_m3tadata_1s_m0dified"){
             if(user.que4===false){
                 user.score=user.score+1;
                 user.que4=true;
@@ -139,7 +139,7 @@ export const que5 = async (req, res) => {
         user.end_time=Date.now();
        const {answer} = req.body;
 
-       if(answer==="raja5"){
+       if(answer==="$tenogr@phy_1s_aws0me"){
             if(user.que5===false){
                 user.score=user.score+1;
                 user.que5=true;
@@ -169,7 +169,7 @@ export const que6 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="raja6"){
+       if(answer==="1m@Ge_sPe@ks_@_l0T"){
             if(user.que6===false){
                 user.score=user.score+1;
                 user.que6=true;
@@ -202,7 +202,7 @@ export const que7 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="raja7"){
+       if(answer==="tommycatlovesjerry"){
            if(user.que7===false){
                 user.end_time=Date.now();
                 user.score=user.score+1;

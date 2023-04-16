@@ -10,6 +10,7 @@ const router = express.Router();
 router.post("/register", register);
 router.post("/login", login);
 router.get("/auth-check", requireSignin, (req, res)=>{
+    console.log("AUTH CHECK", req.user);
     res.json({ok: true});
 })
 

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Que4() {
   const navigate = useNavigate();
@@ -38,16 +39,36 @@ export default function Que4() {
 
   return (
     <div className="container mt-3">
-      <Card style={{ width: "30rem" }}>
+      <Card style={{ width: "55rem" }}>
         <Card.Body>
-          <Card.Title>Problem-4</Card.Title>
+          <Card.Title>Puzzle-4</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Statement</Card.Subtitle>
           <Card.Text>
-            name of beared vegitable in the state of the USA ? there are 50 states in the USA.
-            Hint -- 50 states in the USA
+           
+            <div className="fs-2">
+              <i>
+              Interrogate the  <Link style={{textDecoration: "none", color: "black"}}  to = "https://res.cloudinary.com/dsxyzdqvo/image/upload/v1681654158/rdj_forensic_11_tswf7g.jpg" target="_blank"> Picture</Link>
+              </i>
+              </div>
+               <div className="fs-5">
+                bug_apd is big fan of Robert Downey Jr.By some great luck he has recieved a 
+                messege from his beloved iron man but it is hidden inside this picture. Help 
+                him to find that secret messege.
+               </div>
+               
           </Card.Text>
         </Card.Body>
       </Card>
+
+      <div>
+        <h3 className="mt-3">Hint</h3>
+        <p className="fs-4">
+          <i>Find Picture </i>
+        </p>
+        <p className="fs-4">
+          <i> A picture is much more than just visual representation.  </i>
+        </p>
+      </div>
 
       <form onSubmit={handleSubmit}>
         <div className="form-group mt-2">

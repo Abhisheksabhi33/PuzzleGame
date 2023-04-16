@@ -38,16 +38,45 @@ export default function Que5() {
 
   return (
     <div className="container mt-3">
-      <Card style={{ width: "30rem" }}>
+      {/* <Card style={{ width: "38rem" }}>
         <Card.Body>
-          <Card.Title>Problem-5</Card.Title>
+          <Card.Title>Puzzle-5</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Statement</Card.Subtitle>
           <Card.Text>
-            where is wipro located? there is a hint in the question
-            hint -- wipro is located in bangalore
+            */}
+            
+            <div>
+              <h1 className="fs-1">Puzzle-5</h1>
+            </div>
+           
+            <p>
+              <p className="fs-2">seeker alchemist</p>
+            </p>
+          
+            <div className="fs-3">
+              <i>
+              Fullmetal alchemist and his brother have to find the way to get their real bodies back.
+              They ask bug_apd to help them in digging the clue out of the given picture.Can you be 
+              that seeker achemist for him?
+              </i>
+            </div>
+
+
+{/* 
           </Card.Text>
         </Card.Body>
-      </Card>
+      </Card> */}
+
+      <div className="img-fluid mt-4 " style={{ width: "38rem" }} >
+        <img src="https://res.cloudinary.com/dsxyzdqvo/image/upload/v1681655473/prob_image1_zkb3cd.jpg" target="_blank" alt="" />
+      </div>
+
+      <div>
+        <h3 className="mt-3">Hint</h3>
+        <p className="fs-4">
+          <i> Who is bug_apd??? search for him wherever it is required. </i>
+        </p>
+      </div>
 
       <form onSubmit={handleSubmit}>
         <div className="form-group mt-2">

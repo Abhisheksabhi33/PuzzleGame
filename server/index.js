@@ -19,7 +19,12 @@ mongoose
     .catch((err)=>console.log("DB Error => ", err));
 
 // middleware
-app.use(cors());
+app.use(cors(
+    {        
+    origin: ["http://localhost:3000" , "https://puzzlegame-2fu6.onrender.com"]
+
+    }
+));
 app.use(morgan("dev"));
 app.use(express.json());
 

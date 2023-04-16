@@ -3,7 +3,14 @@ import Table from 'react-bootstrap/Table'
 
 function UserTable({ users }) {
   // sort the users by score
-  users.sort((a, b) => b.score - a.score);
+  users.sort((a, b) =>{
+    if(a.score===b.score){
+      const AccuracyA = (a.total_attempted - a.wrong_attempted)/a.total_attempted;
+      const AccuracyB = (b.total_attempted - b.wrong_attempted)/b.total_attempted;
+      return AccuracyB - AccuracyA;
+    }
+    return b.score - a.score;
+  });
   return (
      <div className='container mt-3'>
         <Table striped bordered hover>
@@ -28,7 +35,7 @@ function UserTable({ users }) {
                 <td>{user.total_attempted}</td>
                 <td>{user.total_attempted - user.wrong_attempted}</td>
                 {/* const Accuracy = (res.data.total_attempted - res.data.wrong_attempted)/res.data.total_attempted; */}
-                <td>{ user.total_attempted===0? '0.00' :((user.total_attempted-user.wrong_attempted)/user.total_attempted).toFixed(2)}</td>
+                <td>{ user.total_attempted===0? '0.00' :(((user.total_attempted-user.wrong_attempted)/user.total_attempted).toFixed(4))*100}%</td>
                 {/* <td>{(Date(user.end_time)-Date(user.start_time))/1000}</td> */}
             </tr>
         ))}

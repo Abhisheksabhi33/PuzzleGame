@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Que1() {
   const navigate = useNavigate();
@@ -38,16 +39,27 @@ export default function Que1() {
 
   return (
     <div className="container mt-3">
-      <Card style={{ width: "30rem" }}>
+      <Card style={{ width: "34rem" }}>
         <Card.Body>
-          <Card.Title>Problem-1</Card.Title>
+          <Card.Title>Puzzle-1</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Statement</Card.Subtitle>
           <Card.Text>
-            what is the capital of india? who serve the country? what is the
-            name of the country?
+          <div className="fs-2">
+          Every photo taken has a treasure trove of details hidden from view , find the hidden message!!
+          </div>
+            <Link style={{textDecoration: "none"}} to={"https://res.cloudinary.com/dsxyzdqvo/image/upload/v1681649185/2877459_gedzsl.jpg" } target="_blank" ><i>Hidden</i></Link>
+
           </Card.Text>
         </Card.Body>
       </Card>
+
+      <div>
+        <h3 className="mt-3">Hint</h3>
+        <p className="fs-4">
+          <i>Meta Data</i>
+        </p>
+       
+      </div>
 
       <form onSubmit={handleSubmit}>
         <div className="form-group mt-2">
