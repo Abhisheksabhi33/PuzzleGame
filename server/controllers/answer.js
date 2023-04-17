@@ -2,9 +2,6 @@ import User from '../models/user.js';
 export const que1 = async (req, res) => {
     try{
         const user=await User.findById(req.user._id);
-
-
-
        const {answer} = req.body;
        if(user.start_time===null)
         user.start_time=Date.now();

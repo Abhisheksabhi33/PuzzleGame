@@ -3,6 +3,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect} from "react";
+import { Helmet } from "react-helmet";
 
 export default function Dashboard() {
  
@@ -29,6 +30,9 @@ export default function Dashboard() {
   return (
 
     <>
+    <Helmet>
+      <title>Dashboard</title>
+    </Helmet>
    
       <Card className=" container d-flex mt-3" style={{ width: "auto" }}>
         <Card.Body>
@@ -53,20 +57,8 @@ export default function Dashboard() {
         (async () => {
           
           try {
-            
-            const res= await axios.get(`${process.env.REACT_APP_API}/score/user`);
-           
-            res.data.start_time===null? setStart_time(Date.now()):setStart_time(res.data.start_time);
-            setEnd_time(Date.now());
-
-            console.log(res.data);
-            
-            
-
             const que = score + 1;
-
             if(que === 8){
-              
               navigate('/score/user');
             }
             else

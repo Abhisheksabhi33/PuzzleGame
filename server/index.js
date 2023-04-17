@@ -6,6 +6,7 @@ import authRoutes from "./routes/auth.js";
 import answerRoutes from "./routes/answer.js";
 import scoreRoutes from "./routes/score.js";
 import getAllUsers from "./routes/allUsers.js";
+import getTimer from "./routes/timer.js";
 import cors from "cors";
 dotenv.config();
 
@@ -36,6 +37,7 @@ app.use("/api", authRoutes);
 app.use("/api", answerRoutes);
 app.use("/api", scoreRoutes);
 app.use("/api", getAllUsers);
+app.use("/api", getTimer);
 
 
 const port = process.env.PORT || 8000;
