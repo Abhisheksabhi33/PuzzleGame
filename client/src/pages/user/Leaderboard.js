@@ -36,7 +36,7 @@ import PageNotFoundGIF from "../../images/pnf.jpg";
 
   return auth?.user?.role === 1 ? (
     <div className="container">
-      <div className="py-4">
+      <div className="py-4 text-center">
         <h1>Leaderboard</h1>
         <UserTable users={users} />
       </div>

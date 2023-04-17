@@ -58,9 +58,13 @@ export default function  Score() {
   const [auth, setAuth] = useAuth();
   return (
     <div>
-      <Card className="container mt-3" style={{ width: '28rem' }}>
+      <Card className="container mt-3 " >
+      <div className="d-flex justify-content-center " >
+        <div>
       <Card.Body >
-      
+
+       
+
         <Card.Title className="fs-2">{ auth?.user?.username?.toUpperCase()}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted fs-3 mt-3"><i>Your Score :</i> <i>{score} </i> </Card.Subtitle>
         <Card.Subtitle className="mb-2 text-muted fs-3 mt-2"><i>Total Attempt :</i> <i>{total_attempted} </i> </Card.Subtitle>
@@ -72,8 +76,15 @@ export default function  Score() {
         <Card.Text>
         
         </Card.Text>
+
+      
        
       </Card.Body>
+
+      </div>
+      
+      </div>
+
     </Card>
     </div>
   );

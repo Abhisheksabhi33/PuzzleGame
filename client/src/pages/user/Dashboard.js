@@ -26,13 +26,15 @@ export default function Dashboard() {
 
  const navigate = useNavigate();
   return (
+
     <>
-      <Card className="container-fluid d-flex mt-3" style={{ width: "50rem" }}>
+   
+      <Card className=" container d-flex mt-3" style={{ width: "auto" }}>
         <Card.Body>
           <Card.Title className="fw-bold justify-content center text-center">Instructions</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
           </Card.Subtitle>
-          <Card.Text className="mt-3 " style={{fontSize:"25px"}}>
+          <Card.Text className="mt-3 container " style={{fontSize:"1.3rem"}}>
            <p>1. Read and follow each clue carefully to discover the location of the next clue.</p>
            <p>2. Each clue may require different problem-solving techniques and may lead you to different sources such as texts, videos, 3D animations, games, links or anything else.</p>
             <p>3. Keep track of the clues and the sources used to solve them.</p>
@@ -68,7 +70,8 @@ export default function Dashboard() {
         
       )} class="btn btn-dark" type="button"> {score==0 ? "Start" : score===7 ? "See Score": "Resume"}  </button>
       </div>
-        
-    </>
+      </>      
+  
   );
 }
+

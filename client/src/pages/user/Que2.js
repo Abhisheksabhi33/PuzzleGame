@@ -4,8 +4,10 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Collapse from 'react-bootstrap/Collapse';
 
 export default function Que2() {
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -40,7 +42,7 @@ export default function Que2() {
 
   return (
     <div className="container mt-3">
-      <Card style={{ width: "38rem" }}>
+      <Card style={{ width: "auto" }}>
         <Card.Body>
           <Card.Title>Puzzle-2</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Statement</Card.Subtitle>
@@ -67,12 +69,29 @@ export default function Que2() {
         </Card.Body>
       </Card>
 
-      <div>
+      {/* <div>
         <h3 className="mt-3">Hint</h3>
         <p className="fs-4">
           <i>Morse</i>
         </p>
+      </div> */}
+
+    <div className="mt-2 mx-2">
+      <Link
+        className="mt-3 fs-4"
+        style={{ cursor: "pointer", textDecoration: "none" , color: "black"  }}  
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+      >
+        Hint
+      </Link>
       </div>
+      <Collapse in={open}>
+        <div id="example-collapse-text mx-2">
+        Morse
+        </div>
+      </Collapse>
 
 
       <form onSubmit={handleSubmit}>

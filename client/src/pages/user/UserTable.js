@@ -12,8 +12,8 @@ function UserTable({ users }) {
     return b.score - a.score;
   });
   return (
-     <div className='container mt-3'>
-        <Table striped bordered hover>
+     <div  className='container table-responsive-sm mt-3'>
+        <Table style={{fontSize: "0.7rem"}} className ="table table-dark table-hover  " striped bordered hover>
       <thead>
         <tr>
           <th>Rank</th>

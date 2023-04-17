@@ -1,89 +1,84 @@
+import { Link } from "react-router-dom";
+import { useAuth } from "../../context/auth";
+import { useNavigate } from "react-router-dom";
 
-import { NavLink , Link} from "react-router-dom"
-import { useAuth } from "../../context/auth"
-import { useNavigate } from "react-router-dom"
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
+export default function Menu() {
+  // hooks
+  const [auth, setAuth] = useAuth();
+  const navigate = useNavigate();
 
-export default function Menu(){
-    // hooks
-    const [auth, setAuth] = useAuth();
-    const navigate = useNavigate();
+  const logout = () => {
+    setAuth({ ...auth, token: null, user: null });
+    localStorage.removeItem("auth");
+    navigate("/login");
+  };
 
-    const logout = () => {
-        setAuth({...auth, token: null, user: null});
-        localStorage.removeItem("auth");
-        navigate("/login");
-    }
-
-    return (
-        <Navbar className="nav nav-tabs d-flex justify-content-between shadow-sm" sticky="top" bg="dark" expand = "lg">
-         <Container fluid>
-          
-         <Navbar.Brand style={{color: "white"}}  to="/">Puzzle-Game</Navbar.Brand>
-
-        {!auth?.user ?  <Nav
-            className="me-auto my-2 my-lg-0 nav-item "
-            style={{ maxHeight: '100px' }}
-           
+  return (
+    <>
+      <nav className="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+        <div className="container-fluid">
+          <Link className="navbar-brand fs-3" to="/">
+            Puzzle-Game
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-            <Link className='mx-3 '  style={{color: "white" , textDecoration:"none"}} to="/">Home</Link>
-            <Link style={{color: "white" , textDecoration:"none"}} to="/about">About</Link>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/">
+                  Home
+                </Link>
+              </li>
 
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
+              </li>
+            </ul>
 
-          </Nav> : <Nav className="nav-item ">
-            <Link className='mx-3 '  style={{color: "white" , textDecoration:"none", margin: "15px"}} to="/">Home</Link>
-            <Link style={{color: "white" , textDecoration:"none", margin: "15px"}} to="/about">About</Link>
-            <Link  style={{color: "white" , textDecoration:"none", margin: "15px"}} to={`/score/${auth?.user?.role===1 ? "admin":"user"}`}> {auth?.user?.role===1 ? "Leaderboard" : "Your Status"} </Link>
-            </Nav>}
+            {auth?.user ? (
+              <div className="d-flex navbar-nav ">
+                <Link
+                  className="nav-item nav-link "
+                  to={`/score/${auth?.user?.role === 1 ? "admin" : "user"}`}
+                >
+                  {auth?.user?.role === 1 ? "Leaderboard" : "Your Score"}
+                </Link>
 
-          {!auth?.user ? (
-                    <div className="nav-item ">
-                        <Button variant="outline-light" className="mx-2" >
-                        <NavLink className="nav-link" to="/login">
-                                LOGIN
-                            </NavLink>
-                        </Button>
-                        <Button variant="outline-light" className="mx-2" >
-                        <NavLink className="nav-link" to="/register">
-                                REGISTER
-                            </NavLink>
-                        </Button>
-                    </div>
+                <a className=" nav-item nav-link ">
+                  {" "}
+                  {auth?.user?.username?.toUpperCase()}
+                </a>
 
-                      
-                ): (
-                    <div className="dropdown d-flex flex-column nav-item "> 
-                        <>
-                            <a style={{color: "white" , margin: "5px"}} >
-                                { auth?.user?.username?.toUpperCase() }
-                            </a>
-                           
-                        </>
-                                {/* <NavLink className="nav-link pointer" 
-                                    to={`/dashboard/${auth?.user?.role===1 ? "admin" : "user"}`}>
-                                    Dashboard
-                                </NavLink> */}
-                            
+                <button className="btn btn-outline-light me-2" onClick={logout}>
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div className="d-flex navbar-nav ">
+                <Link className="nav-item nav-link " to="/login">
+                  Login
+                </Link>
 
-                                    {/* <a style={{color: "white"}}  onClick={logout} >
-                                        Logout
-                                    </a>  */}
-                                    <Button variant="outline-light" className="mx-2" onClick={logout} >
-                                        Logout
-                                    </Button>
-                           
-                     
-                    </div>
-                )}
-
-
-            </Container>   
-
-        </Navbar>
-    );
-    
+                <Link className="nav-item nav-link " to="/register">
+                  Register
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
+      </nav>
+    </>
+  );
 }
