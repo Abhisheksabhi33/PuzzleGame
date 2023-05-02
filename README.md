@@ -4,13 +4,13 @@ This project is an interactive puzzle designed to assess users' soft skills, suc
 The Project is Live at here -  <br>
 https://puzzlegame-2fu6.onrender.com/
 
-ANSWER 1 ->    KeeP_c0ding
-ANSWER 2 ->    m0rsecodeisamazing
-ANSWER 3 ->    keep_coding
-ANSWER 4 ->    the_m3tadata_1s_m0dified
-ANSWER 5 ->    $tenogr@phy_1s_aws0me
-ANSWER 6 ->    1m@Ge_sPe@ks_@_l0T
-ANSWER 7 ->    tommycatlovesjerry
+ANSWER 1 ->    KeeP_c0ding <br>
+ANSWER 2 ->    m0rsecodeisamazing <br>
+ANSWER 3 ->    keep_coding <br>
+ANSWER 4 ->    the_m3tadata_1s_m0dified <br>
+ANSWER 5 ->    $tenogr@phy_1s_aws0me <br>
+ANSWER 6 ->    1m@Ge_sPe@ks_@_l0T <br>
+ANSWER 7 ->    tommycatlovesjerry <br>
 
 
 <h2>Tech Stack</h2>
